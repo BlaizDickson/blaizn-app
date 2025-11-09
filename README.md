@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# BLAIZN
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Chart Your Path to Success**
 
-## Available Scripts
+A career and wealth-building platform designed for Nigerian professionals transitioning into tech and remote work.
 
-In the project directory, you can run:
+## 🎯 Features
 
-### `npm start`
+- **Multi-Track Progress System**: Monitor growth across Immediate Income, Remote Jobs, and Wealth Assets
+- **AI-Powered Coaching**: Get personalized daily suggestions based on your progress
+- **Project Portfolio**: Showcase your work with privacy controls
+- **Analytics Dashboard**: Track hours, revenue, applications, and milestones
+- **Subscription Management**: Free and Pro tiers with Paystack integration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React 18
+- **Styling**: Tailwind CSS 3.4
+- **Icons**: Lucide React
+- **Storage**: Local Storage API
+- **Payment**: Paystack (integration ready)
+- **Deployment**: Vercel (coming soon)
 
-### `npm test`
+## 📦 Installation
+```bash
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/blaizn-app.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Navigate to project
+cd blaizn-app
 
-### `npm run build`
+# Install dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start development server
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏗️ Project Structure
+```
+blaizn-app/
+├── public/              # Static files
+├── src/
+│   ├── components/      # Reusable components (coming soon)
+│   ├── pages/          # Page components (coming soon)
+│   ├── utils/          # Helper functions (coming soon)
+│   ├── App.js          # Main app component
+│   ├── index.js        # Entry point
+│   └── index.css       # Global styles
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+└── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🗺️ Development Roadmap
 
-### `npm run eject`
+- [x] Project setup
+- [x] Tailwind CSS configuration
+- [x] Landing page design
+- [ ] Authentication system
+- [ ] Onboarding flow
+- [ ] Dashboard
+- [ ] Project portfolio
+- [ ] Payment integration
+- [ ] Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👨‍💻 Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Built with passion by a Nigerian Electrical Engineer transitioning to tech.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📝 License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Private - All rights reserved
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Status**: 🚧 In Active Development
