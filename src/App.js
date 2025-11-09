@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, Rocket, Target } from 'lucide-react';
+import { Card, Button } from './components';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
         Chart Your Path to Success
       </p>
 
-      {/* Feature Cards */}
-      <div className="grid md:grid-cols-3 gap-6 max-w-4xl w-full">
-        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+      {/* Feature Cards - Using Card Component */}
+      <div className="grid md:grid-cols-3 gap-6 max-w-4xl w-full mb-8">
+        <Card hover>
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
             <Target className="w-6 h-6 text-green-600" />
           </div>
@@ -29,9 +30,9 @@ function App() {
           <p className="text-sm text-gray-600">
             Monitor your journey across multiple growth tracks
           </p>
-        </div>
+        </Card>
 
-        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+        <Card hover>
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
             <Zap className="w-6 h-6 text-blue-600" />
           </div>
@@ -39,9 +40,9 @@ function App() {
           <p className="text-sm text-gray-600">
             Get personalized suggestions powered by AI
           </p>
-        </div>
+        </Card>
 
-        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+        <Card hover>
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
             <Rocket className="w-6 h-6 text-purple-600" />
           </div>
@@ -49,14 +50,24 @@ function App() {
           <p className="text-sm text-gray-600">
             Turn your skills into sustainable income
           </p>
-        </div>
+        </Card>
+      </div>
+
+      {/* CTA Buttons - Using Button Component */}
+      <div className="flex gap-4">
+        <Button variant="primary" size="lg">
+          Get Started
+        </Button>
+        <Button variant="outline" size="lg">
+          Learn More
+        </Button>
       </div>
 
       {/* Coming Soon Badge */}
-      <div className="mt-12 px-6 py-3 bg-gradient-to-r from-blaizn-orange to-blaizn-red rounded-full">
-        <p className="text-white font-semibold">
+      <div className="mt-8">
+        <span className="inline-block px-6 py-3 bg-gradient-to-r from-blaizn-orange to-blaizn-red rounded-full text-white font-semibold">
           🚀 Launching Soon
-        </p>
+        </span>
       </div>
     </div>
   );
