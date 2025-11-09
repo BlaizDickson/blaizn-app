@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Rocket, Target } from 'lucide-react';
+import { Zap, Rocket } from 'lucide-react';
 import { Card, Button } from './components';
 import AuthPage from './pages/AuthPage';
-import { getCurrentUser, logout } from './services/storage';
+import OnboardingPage from './pages/OnboardingPage';
+import { getCurrentUser, logout, updateUser } from './services/storage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -20,6 +21,20 @@ function App() {
   // Handle successful login
   const handleLoginSuccess = (user) => {
     setCurrentUser(user);
+  };
+
+  // Handle onboarding completion
+  const handleOnboardingComplete = (onboardingData) => {
+    const updatedUser = {
+      ...currentUser,
+      ...onboardingData
+    };
+    
+    // Update in storage
+    updateUser(currentUser.email, updatedUser);
+    
+    // Update state
+    setCurrentUser(updatedUser);
   };
 
   // Handle logout
@@ -47,7 +62,17 @@ function App() {
     return <AuthPage onLoginSuccess={handleLoginSuccess} />;
   }
 
-  // If logged in, show dashboard (temporary - we'll build this next)
+  // If logged in but onboarding not complete, show onboarding
+  if (!currentUser.onboardingComplete) {
+    return (
+      <OnboardingPage
+        user={currentUser}
+        onComplete={handleOnboardingComplete}
+      />
+    );
+  }
+
+  // If logged in and onboarded, show dashboard
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 p-8">
       {/* Header */}
@@ -68,7 +93,7 @@ function App() {
         </div>
       </div>
 
-      {/* Dashboard Placeholder */}
+      {/* Dashboard Content */}
       <div className="max-w-7xl mx-auto">
         <Card>
           <div className="text-center py-12">
@@ -76,15 +101,22 @@ function App() {
               <Rocket className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Welcome to BLAIZN, {currentUser.name}! 🎉
+              Dashboard Coming Soon! 🎉
             </h2>
-            <p className="text-gray-600 mb-8">
-              Your dashboard is being built. Coming soon!
+            <p className="text-gray-600 mb-4">
+              You've completed onboarding!
             </p>
-            <div className="flex justify-center gap-4">
-              <Button variant="primary">Start Onboarding</Button>
-              <Button variant="outline">View Profile</Button>
+            <div className="max-w-md mx-auto text-left bg-gray-50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-gray-900 mb-3">Your Setup:</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>Selected Tracks:</strong> {currentUser.selectedTracks.join(', ')}</p>
+                <p><strong>Your Goal:</strong> {currentUser.userGoal}</p>
+                <p><strong>Week:</strong> {currentUser.currentWeek}</p>
+              </div>
             </div>
+            <Button variant="primary" size="lg">
+              Go to Dashboard
+            </Button>
           </div>
         </Card>
       </div>
